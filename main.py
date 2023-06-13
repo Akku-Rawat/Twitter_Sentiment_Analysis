@@ -117,7 +117,8 @@ class Senty:
     no_of_tweets =  int(input("Enter how many tweets to search: "))
 
         # searching for tweets
-    cursor = tweepy.Cursor(api.search, q=search_word, lang = "en", tweet_mode='extended').items(no_of_tweets)
+    #cursor = tweepy.Cursor(api.search, q=search_word, lang = "en", tweet_mode='extended').items(no_of_tweets)
+    cursor = tweepy.Cursor(api.search_tweets, q=search_word, lang = "en", tweet_mode='extended').items(no_of_tweets)
 #tweets=[]
 
     for i in cursor:
